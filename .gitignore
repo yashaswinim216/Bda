@@ -1,0 +1,30 @@
+# Environment / secrets
+.env
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Python caches
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.mypy_cache/
+
+# Generated datasets (large files - keep them out of Git)
+data/*.csv
+data/*.csv.gz
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Local logs
+*.log
