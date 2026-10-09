@@ -147,16 +147,13 @@ def _group_by_field(
     sort_by: str = "revenue",
     limit: Optional[int] = None,
     collection: Optional[Collection] = None,
-    include_category: bool = False,
 ) -> list[dict]:
     """Group revenue / quantity / orders by a single field."""
     collection = collection or get_collection()
-    group_key: dict = {"category": "$category"} if include_category else {"$literal": ""}
-    group_id = f"${field}" if not include_category else {field: f"${field}", **group_key}
     pipeline = _base_pipeline(filters) + [
         {
             "$group": {
-                "_id": group_id,
+                "_id": f"${field}",
                 "revenue": {"$sum": "$revenue"},
                 "quantity": {"$sum": "$quantity"},
                 "orders": {"$sum": 1},

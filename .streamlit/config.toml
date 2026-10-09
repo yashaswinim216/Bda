@@ -1,0 +1,12 @@
+# Streamlit configuration for the analytics dashboard.
+# Keeps the demo looking consistent regardless of the OS theme.
+
+[theme]
+base = "light"
+primaryColor = "#2563eb"
+backgroundColor = "#ffffff"
+secondaryBackgroundColor = "#f8fafc"
+textColor = "#0f172a"
+
+[server]
+headless = true
